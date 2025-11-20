@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Earning ~×•RDS TEAM•×~</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        /* Google Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+        /* CSS Variables for Theming */
+        :root {
+            --font-family: 'Nunito', sans-serif;
+            --bg-color: #121212; /* Dark background */
+            --secondary-bg: #1e1e1e; /* Card/Header background */
+            --text-color: #ffffff;
+            --subtle-text: #a0a0a0;
+            --accent-color: #3498db; /* Primary button/highlight color (blue) */
+            --danger-color: #e74c3c; /* Red for warnings */
+            --sparkle-color: #f1c40f; /* Yellow/Gold for special elements */
+            --success-color: #2ecc71; /* Green for success */
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-user-select: none; 
+            user-select: none;
+            padding-bottom: 70px; /* Space for bottom navigation */
+        }
+        
+        /* Utility Classes (Tailwind-like) */
+        .p-4 { padding: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .w-full { width: 100%; }
+        .h-auto { height: auto; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .hidden { display: none !important; }
+
+        /* Container and Header */
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            min-height: calc(100vh - 70px);
+        }
+        
+        .header {
+            background-color: var(--secondary-bg);
+            padding: 1rem 0;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        
+        .profile-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--sparkle-color);
+            margin-right: 15px;
+        }
+
+        .user-info h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .user-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--subtle-text);
+        }
+
+        /* Balance Cards */
+        .balance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 1rem;
+        }
+
+        .balance-card {
+            background-color: var(--secondary-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .balance-card.full-width {
+            grid-column: 1 / -1;
+            padding: 10px;
+        }
+
+        .balance-card h3 {
+            font-size: 0.8rem;
+            color: var(--subtle-text);
+            margin: 0 0 5px 0;
+        }
+
+        .balance-card p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sparkle-color);
+            margin: 0;
+        }
+        
+        .balance-card.referral p {
+            color: var(--accent-color);
+        }
+        
+        .balance-card.main-wallet {
+            border-bottom: 3px solid var(--sparkle-color);
+        }
+        
+        .balance-card.refer-wallet {
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        /* Buttons and Inputs */
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.2s;
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* For Open button link */
+        }
+        
+        .btn-primary:hover:not(:disabled) {
+            background-color: #2980b9;
+        }
+        
+        .btn-primary:disabled {
+            background-color: #3a536b;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .btn-primary.loading {
+            opacity: 0.8;
+            background-color: #555;
+        }
+        
+        .btn-copy {
+            background-color: #27ae60; /* Green for copy */
+        }
+        .btn-copy:hover {
+            background-color: #219653; 
+        }
+
+        input[type="text"], input[type="number"], select, textarea {
+            background-color: #2a2a2a;
+            color: var(--text-color);
+            border: 1px solid #3c3c3c;
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        /* File Input Custom Styling */
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px dashed #3c3c3c;
+            border-radius: 8px;
+            background-color: #2a2a2a;
+            color: var(--text-color);
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        input[type="file"]::file-selector-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.2s;
+        }
+        
+        input[type="file"]::file-selector-button:hover {
+            background-color: #2980b9;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--subtle-text);
+        }
+        
+        /* Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--secondary-bg);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .nav-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--subtle-text);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: color 0.2s;
+            flex-grow: 1; /* Ensure equal spacing for 5 buttons */
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-btn i {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .nav-btn.active {
+            color: var(--accent-color);
+        }
+
+        /* Page Management */
+        .page {
+            min-height: 100vh;
+            display: none;
+            padding: 0 1rem 20px 1rem;
+        }
+
+        .page.active {
+            display: block;
+        }
+        
+        /* Referral Section */
+        .referral-box {
+            background-color: #2a2a2a;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 1rem;
+            border: 1px solid #3c3c3c;
+        }
+        
+        .referral-box h3 {
+            color: var(--sparkle-color);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        
+        .referral-input-group {
+            display: flex;
+        }
+        
+        .referral-input-group input {
+            flex-grow: 1;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            font-size: 0.85rem;
+        }
+        
+        .referral-input-group button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-left: -1px;
+            font-weight: 600;
+        }
+        
+        .referral-input-group button:hover {
+            background-color: #219653;
+        }
+
+        .referral-notice {
+            background-color: #3b2020;
+            color: var(--danger-color);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .success-notice {
+            background-color: #213c21;
+            color: var(--success-color);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* Withdraw Specific Styles */
+        .ref-check-block {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--danger-color);
+        }
+        .ref-check-block p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Micro Job Styles */
+        .microjob-item {
+            margin-top: 10px !important;
+            padding: 10px 15px !important;
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            overflow-y: auto; /* Allow scrolling for modal on small screens */
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background-color: var(--secondary-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .modal-body textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Loading Spinner for buttons */
+        .fa-spin {
+            animation: fa-spin 2s infinite linear;
+        }
+        @keyframes fa-spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(359deg); }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="profile-section">
+                <img id="user-photo" class="profile-photo" src="https://placehold.co/60x60/3498db/ffffff?text=U" alt="User Photo">
+                <div class="user-info">
+                    <h2 id="user-name">Loading...</h2>
+                    <p>ID: <span id="user-id">N/A</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="home-page" class="page active">
+            
+            <div class="balance-grid">
+                <div class="balance-card main-wallet">
+                    <h3>মেইন ওয়ালেট (TK)</h3>
+                    <p id="main-balance">0.00 TK</p>
+                </div>
+                <div class="balance-card refer-wallet">
+                    <h3>রেফার ওয়ালেট (TK)</h3>
+                    <p id="refer-balance">0.00 TK</p>
+                </div>
+                <div class="balance-card full-width" style="padding: 10px;">
+                    <div class="flex justify-between items-center px-2">
+                        <h3 style="color: var(--text-color); font-size: 1rem;">মোট রেফার</h3>
+                        <p id="total-referrals" style="font-size: 1.2rem; color: var(--sparkle-color);">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4">
+                <div id="ref-status-notice" class="referral-notice hidden">
+                    উত্তোলনের জন্য কমপক্ষে 20 জন রেফার সম্পন্ন করুন।
+                </div>
+            </div>
+            
+            <div class="p-4">
+                <h3 style="color: var(--subtle-text); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 5px;">দৈনিক কার্যকলাপ</h3>
+                <div class="balance-card full-width flex justify-between items-center" style="background-color: #2a2a2a; margin-top: 10px;">
+                    <p style="font-size: 1rem; color: var(--text-color); margin: 0;">আজকের বিজ্ঞাপন দেখা হয়েছে:</p>
+                    <p id="daily-ads-watched" style="font-size: 1.2rem; color: var(--accent-color);">0</p>
+                </div>
+                <button id="watch-ad-btn" class="btn-primary">
+                    <i class="fas fa-video mr-2"></i> বিজ্ঞাপন দেখুন (Watch Ad)
+                </button>
+            </div>
+            
+            <div class="referral-box">
+                <h3><i class="fas fa-user-friends mr-2"></i> আপনার রেফারেল লিংক</h3>
+                <p style="color: var(--subtle-text); font-size: 0.85rem; margin-bottom: 10px;">প্রতি রেফারে <span style="color: var(--sparkle-color); font-weight: bold;">30 TK</span> বোনাস আপনার রেফার ওয়ালেটে যোগ হবে।</p>
+                <div class="referral-input-group">
+                    <input type="text" id="referral-link-input" readonly value="Loading...">
+                    <button id="copy-referral-btn"><i class="fas fa-copy"></i> কপি</button>
+                </div>
+                <button id="generate-message-btn" class="btn-primary mt-2" style="background-color: #9b59b6;">
+                    <i class="fas fa-robot mr-2"></i> ভাইরাল শেয়ার ম্যাসেজ তৈরি করুন
+                </button>
+            </div>
+        </div>
+
+        <div id="task-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">দৈনিক কাজ (Tasks)</h2>
+
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-clock"></i> আজকের বিজ্ঞাপন</h3>
+                
+                <div class="flex justify-between items-center balance-card" style="background-color: #1e1e1e; padding: 15px; margin-top: 10px;">
+                    <div>
+                        <p class="font-bold">বিজ্ঞাপন দেখা (Ad View)</p>
+                        <p class="text-xs" style="color: var(--subtle-text);">প্রতিটি বিজ্ঞাপন দেখার জন্য 0.50 TK</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-bold text-lg" id="task-ad-count" style="color: var(--accent-color);">0</p>
+                        <p class="text-xs" style="color: var(--subtle-text);">দেখা হয়েছে</p>
+                    </div>
+                </div>
+                
+                <button data-page="home-page" class="btn-primary mt-3 nav-btn">
+                    <i class="fas fa-play mr-2"></i> কাজটি করুন (Watch Ad)
+                </button>
+
+            </div>
+            
+            <div id="microjob-section" class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-microchip"></i> মাইক্রো জব সেকশন</h3>
+                
+                <div id="microjob-content-container">
+                    <div id="verification-pending" class="referral-notice">
+                        <i class="fas fa-lock mr-2"></i> মাইক্রো জব চালু করতে আগে অ্যাকাউন্ট ভেরিফাই করুন।
+                    </div>
+                    
+                    <button id="verify-account-btn" class="btn-primary mt-3" style="background-color: var(--danger-color);">
+                        <i class="fas fa-user-shield mr-2"></i> অ্যাকাউন্ট ভেরিফাই করুন
+                    </button>
+                    
+                    <div id="microjob-list" class="hidden">
+                         <div id="job1-item" class="flex justify-between items-center balance-card microjob-item">
+                            <div>
+                                <p class="font-bold">1️⃣ রেজিস্ট্রেশন জব</p>
+                                <p class="text-xs" style="color: var(--subtle-text);">একটি সাইটে রেজিস্ট্রেশন করে স্ক্রিনশট জমা দিন।</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-lg" style="color: var(--success-color);">10 TK</p>
+                                <button data-job-id="job1" class="btn-primary py-1 px-3 job-click-btn" style="margin-top: 0; font-size: 0.8rem; background-color: #e67e22;">
+                                    Click
+                                </button>
+                            </div>
+                        </div>
+                        <div id="job2-item" class="flex justify-between items-center balance-card microjob-item">
+                            <div>
+                                <p class="font-bold">2️⃣ রেজিস্ট্রেশন জব</p>
+                                <p class="text-xs" style="color: var(--subtle-text);">একটি সাইটে রেজিস্ট্রেশন করে স্ক্রিনশট জমা দিন।</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-lg" style="color: var(--success-color);">10 TK</p>
+                                <button data-job-id="job2" class="btn-primary py-1 px-3 job-click-btn" style="margin-top: 0; font-size: 0.8rem; background-color: #e67e22;">
+                                    Click
+                                </button>
+                            </div>
+                        </div>
+                        <div id="job3-item" class="flex justify-between items-center balance-card microjob-item">
+                            <div>
+                                <p class="font-bold">3️⃣ রেজিস্ট্রেশন জব</p>
+                                <p class="text-xs" style="color: var(--subtle-text);">একটি সাইটে রেজিস্ট্রেশন করে স্ক্রিনশট জমা দিন।</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-lg" style="color: var(--success-color);">10 TK</p>
+                                <button data-job-id="job3" class="btn-primary py-1 px-3 job-click-btn" style="margin-top: 0; font-size: 0.8rem; background-color: #e67e22;">
+                                    Click
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-users"></i> রেফারেল টাস্ক</h3>
+                <p style="color: var(--subtle-text);">আপনার রেফারেল সংখ্যা বাড়ান এবং প্রতি রেফারে 30 TK বোনাস নিন। উইথড্র করার জন্য এটি আবশ্যক।</p>
+                <button data-page="home-page" class="btn-primary mt-3 nav-btn" style="background-color: #2c3e50;">
+                    <i class="fas fa-share-alt mr-2"></i> রেফার করুন
+                </button>
+            </div>
+        </div>
+
+        <div id="verification-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;"><i class="fas fa-shield-alt mr-2"></i> অ্যাকাউন্ট ভেরিফিকেশন</h2>
+            
+            <form id="verification-form" class="mt-4 referral-box">
+                <p class="font-bold text-center" style="color: var(--danger-color); font-size: 1.1rem;">
+                    ⚠️ আমাদের মাইক্রো জব সেকশনে কাজ করতে অ্যাকাউন্ট ভেরিফাই করুন ⚠️
+                </p>
+                
+                <div class="balance-card full-width mt-4 text-center" style="background-color: #3b2020;">
+                    <h3>Verify Amount: <span style="color: var(--sparkle-color);">200 TK</span></h3>
+                </div>
+                
+                <label for="bkash-number">বিকাশ পার্সোনাল:</label>
+                <input type="text" id="bkash-number" value="01338553254" readonly style="color: var(--sparkle-color);">
+                
+                <label for="nagad-number">নগদ পার্সোনাল:</label>
+                <input type="text" id="nagad-number" value="01338553254" readonly style="color: var(--sparkle-color);">
+                
+                <label for="user-send-number">আপনার নাম্বার (যেটা থেকে টাকা পাঠিয়েছেন):</label>
+                <input type="text" id="user-send-number" placeholder="আপনার বিকাশ/নগদ নাম্বার" required>
+                
+                <label for="tnx-id">TrxID/লেনদেন আইডি:</label>
+                <input type="text" id="tnx-id" placeholder="TrxID বসান" required>
+
+                <button id="verify-submit-btn" type="submit" class="btn-primary">
+                    <i class="fas fa-paper-plane mr-2"></i> Submit
+                </button>
+                
+                <button type="button" class="btn-primary nav-btn" style="background-color: #555; margin-top: 10px;" data-page="task-page">
+                    <i class="fas fa-arrow-left mr-2"></i> ফিরে যান
+                </button>
+            </form>
+        </div>
+        
+        <div id="job-details-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;"><i class="fas fa-edit mr-2"></i> জব ডিটেইলস জমা দিন</h2>
+            
+            <form id="job-details-form" class="mt-4 referral-box">
+                <p class="font-bold" style="color: var(--sparkle-color); font-size: 1.1rem;">
+                    ⚠️ জবটি কমপ্লিট করতে হলে নিচে দেয়া "Open" বাটনটি ক্লিক করুন।
+                </p>
+                <p style="color: var(--subtle-text); font-size: 0.9rem;">
+                    বাটনে ক্লিক করার পর সাইটে রেজিস্ট্রেশন করার আগে একটি স্ক্রিনশট নিন এবং পরে আরেকটি স্ক্রিনশট নিন। কাজ শেষ হলে নিচে দেয়া "Submit details" এ ক্লিক করে আপনার স্ক্রিনশটগুলো জমা দিন।
+                </p>
+                
+                <a id="job-open-link" href="https://example.com/registration-job" target="_blank" class="btn-primary" style="background-color: #e67e22; margin-top: 10px;">
+                    <i class="fas fa-external-link-alt mr-2"></i> Open
+                </a>
+                
+                <button id="submit-details-start-btn" type="button" class="btn-primary" style="background-color: var(--accent-color);">
+                    <i class="fas fa-upload mr-2"></i> Submit details
+                </button>
+            </form>
+            
+            <form id="job-submission-form" class="mt-4 referral-box hidden">
+                <p class="font-bold" style="color: var(--success-color); font-size: 1rem; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                    স্ক্রিনশট এবং রেজিস্ট্রেশন তথ্য জমা দিন:
+                </p>
+
+                <label for="ss-before">রেজিস্ট্রেশন এর আগে স্ক্রিনশট:</label>
+                <input type="file" id="ss-before" accept="image/*" required>
+                
+                <label for="ss-after">রেজিস্ট্রেশন এর পরে স্ক্রিনশট:</label>
+                <input type="file" id="ss-after" accept="image/*" required>
+                
+                <label for="reg-credential">যে নাম্বার/জিমেইল দিয়ে রেজিস্ট্রেশন করেছেন:</label>
+                <input type="text" id="reg-credential" placeholder="নাম্বার অথবা জিমেইল" required>
+
+                <button id="job-submit-btn" type="submit" class="btn-primary">
+                    <i class="fas fa-check-circle mr-2"></i> Submit
+                </button>
+            </form>
+            
+            <button type="button" class="btn-primary nav-btn" style="background-color: #555; margin-top: 10px;" data-page="task-page">
+                <i class="fas fa-arrow-left mr-2"></i> ফিরে যান
+            </button>
+        </div>
+
+
+        <div id="withdraw-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">উত্তোলন (Withdraw)</h2>
+
+            <div class="balance-card full-width mt-4 text-center">
+                <h3>উত্তোলনযোগ্য মোট ব্যালেন্স (TK)</h3>
+                <p id="total-withdrawable-balance" style="color: var(--sparkle-color);">0.00 TK</p>
+            <div id="referral-check-block" class="ref-check-block mt-4">
+                <p class="font-bold">উইথড্রয়াল শর্ত:</p>
+                <p id="referral-check-text" style="margin-top: 5px;">
+                    উইথড্র করার জন্য আরও <span style="color: var(--danger-color);">20 জন</span> রেফার প্রয়োজন।
+                </p>
+            </div>
+
+            <form id="withdraw-form" class="mt-4">
+                
+                <label for="wallet-select">ওয়ালেট নির্বাচন করুন:</label>
+                <select id="wallet-select" required>
+                    <option value="main">Main Wallet (<span id="main-balance-withdraw">0.00 TK</span>)</option>
+                    <option value="refer">Refer Wallet (<span id="refer-balance-withdraw">0.00 TK</span>)</option>
+                </select>
+                
+                <label for="method-select">পেমেন্ট মেথড নির্বাচন করুন:</label>
+                <select id="method-select" required>
+                    <option value="bKash">বিকাশ (bKash)</option>
+                    <option value="Nagad">নগদ (Nagad)</option>
+                    <option option value="Rocket">রকেট (Rocket)</option>
+                </select>
+
+                <label for="number-input">একাউন্ট নাম্বার দিন:</label>
+                <input type="text" id="number-input" placeholder="আপনার একাউন্ট নাম্বার" required>
+                
+                <label for="amount-input">উত্তোলনের পরিমাণ (TK):</label>
+                <input type="number" id="amount-input" placeholder="সর্বনিম্ন 100 TK" required min="100">
+
+                <button id="withdraw-submit-btn" type="submit" class="btn-primary" disabled>
+                    <i class="fas fa-money-check-alt mr-2"></i> উত্তোলন নিশ্চিত করুন
+                </button>
+            </form>
+        </div>
+
+        <div id="history-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">উত্তোলনের ইতিহাস (History)</h2>
+            <div id="history-list" class="mt-4 space-y-3">
+                <div class="balance-card text-center p-4 mt-2" style="background-color: #2a2a2a;">
+                    <p style="color: var(--subtle-text);">ইতিহাস লোড হচ্ছে...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="support-page" class="page">
+            <h2 class="py-2" style="border-bottom: 1px solid #333;">সাপোর্ট ও সাহায্য</h2>
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-question-circle"></i> সাধারণ প্রশ্ন</h3>
+                <p style="color: var(--subtle-text); margin-top: 10px;">আমাদের অ্যাপ সম্পর্কে সাধারণ প্রশ্নের উত্তর জানতে বা কোনো সমস্যা রিপোর্ট করতে নিচের বাটনটি ব্যবহার করুন।</p>
+                <a href="https://t.me/vote_rds_bot" target="_blank" class="btn-primary" style="background-color: #2980b9;">
+                    <i class="fab fa-telegram-plane mr-2"></i> সরাসরি সাপোর্ট মেসেজ
+                </a>
+            </div>
+            
+            <div class="referral-box mt-4">
+                <h3 style="color: var(--sparkle-color);"><i class="fas fa-info-circle"></i> গুরুত্বপূর্ণ তথ্য</h3>
+                <ul style="list-style: none; padding: 0; color: var(--subtle-text); font-size: 0.9rem;">
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle mr-2" style="color: var(--accent-color);"></i> প্রতি রেফারে আপনি পাবেন <span style="color: var(--sparkle-color); font-weight: bold;">30 TK</span>।</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle mr-2" style="color: var(--accent-color);"></i> উত্তোলনের জন্য <span style="color: var(--sparkle-color); font-weight: bold;">20 জন রেফার</span> আবশ্যিক।</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check-circle mr-2" style="color: var(--accent-color);"></i> আপনার ডেটা সম্পূর্ণরূপে নিরাপদ।</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="gemini-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 style="color: var(--sparkle-color);"><i class="fas fa-lightbulb"></i> রেফারেল ম্যাসেজ তৈরি</h3>
+                    <button id="close-modal-btn" style="background: none; border: none; color: var(--text-color); font-size: 1.5rem; cursor: pointer;">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p style="color: var(--subtle-text); font-size: 0.9rem; margin-bottom: 10px;">
+                        Gemini আপনার জন্য আকর্ষণীয় একটি রেফারেল ম্যাসেজ তৈরি করেছে।
+                    </p>
+                    <textarea id="generated-message" readonly>
+                        এখানে ম্যাসেজ লোড হবে...
+                    </textarea>
+                    <button id="copy-generated-btn" class="btn-primary mt-3 btn-copy">
+                        <i class="fas fa-copy"></i> কপি করুন
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div> <div class="bottom-nav">
+    <button class="nav-btn active" data-page="home-page">
+            <i class="fas fa-home"></i> হোম
+        </button>
+        <button class="nav-btn" data-page="task-page">
+            <i class="fas fa-clipboard-list"></i> কাজ
+        </button>
+        <button class="nav-btn" data-page="withdraw-page">
+            <i class="fas fa-wallet"></i> উত্তোলন
+        </button>
+        <button class="nav-btn" data-page="history-page">
+            <i class="fas fa-history"></i> ইতিহাস
+        </button>
+        <button class="nav-btn" data-page="support-page">
+            <i class="fas fa-headset"></i> সাপোর্ট
+        </button>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, updateDoc, onSnapshot, collection, query, where, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Firestore লগিং সেট করা (debugging এর জন্য)
+        setLogLevel('Debug');
+
+        // গ্লোবাল ভেরিয়েবল সেট আপ
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        
+        // ===================================
+        // 🚨 আপনার কাঙ্খিত কনফিগারেশন ভেরিয়েবল 🚨
+        // এগুলো আপনার মূল কোড থেকে পুনরুদ্ধার করা হয়েছে।
+        // ===================================
+        const BOT_TOKEN = "8360641058:AAG8d_1se4iz9xub9x-0XD_tDDmbUtbcvbs"; // আপনার চাওয়া বট টোকেন
+        const ADMIN_CHAT_ID = "7702378694"; // আপনার চাওয়া অ্যাডমিন আইডি
+        const SUPPORT_GROUP_LINK = "https://t.me/amrrdsteam"; // আপনার চাওয়া গ্রুপ লিংক
+        const FACEBOOK_PAGE_LINK = "YOUR_FACEBOOK_PAGE_HERE"; // আপনার চাওয়া পেজ লিংক
+        
+        const REFERRAL_BONUS_TK = 30.00; // প্রতি রেফারে 30 টাকা
+        const MIN_REFERRALS_FOR_WITHDRAW = 20; // উইথড্র করার জন্য প্রয়োজনীয় রেফার সংখ্যা
+        const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=`;
+        const API_KEY = ""; // Canvas runtime provides this
+
+        let db, auth;
+        let userState = { 
+            points: 0, 
+            dailyAds: 0, 
+            referrals: 0, 
+            referralBalance: 0 
+        };
+        let isAuthReady = false;
+
+        // UI উপাদানগুলির রেফারেন্স
+        const tg = window.Telegram?.WebApp;
+        
+        // Home Page
+        const userNameElem = document.getElementById('user-name');
+        const userPhotoElem = document.getElementById('user-photo');
+        const userIdElem = document.getElementById('user-id');
+        const totalReferralsElem = document.getElementById('total-referrals'); 
+        const dailyAdsWatchedElem = document.getElementById('daily-ads-watched');
+        const referralLinkElem = document.getElementById('referral-link-input');
+        const copyReferralBtn = document.getElementById('copy-referral-btn');
+        const watchAdBtn = document.getElementById('watch-ad-btn');
+        const refStatusNotice = document.getElementById('ref-status-notice');
+        const generateMessageBtn = document.getElementById('generate-message-btn'); 
+        const geminiModal = document.getElementById('gemini-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const generatedMessageArea = document.getElementById('generated-message');
+        const copyGeneratedBtn = document.getElementById('copy-generated-btn');
+        
+        // Balance Elements
+        const mainBalanceElem = document.getElementById('main-balance');
+        const referBalanceElem = document.getElementById('refer-balance');
+        
+        // Task Page
+        const taskAdCountElem = document.getElementById('task-ad-count');
+
+        // Withdraw Page
+        const withdrawForm = document.getElementById('withdraw-form');
+        const amountInput = document.getElementById('amount-input');
+        const withdrawSubmitBtn = document.getElementById('withdraw-submit-btn');
+        const totalWithdrawableBalanceElem = document.getElementById('total-withdrawable-balance');
+        const referralCheckBlock = document.getElementById('referral-check-block');
+        const referralCheckText = document.getElementById('referral-check-text');
+        const walletSelect = document.getElementById('wallet-select'); 
+        const mainBalanceWithdrawElem = document.getElementById('main-balance-withdraw');
+        const referBalanceWithdrawElem = document.getElementById('refer-balance-withdraw');
+        const walletMainRadio = document.getElementById('wallet-main');
+        const walletReferRadio = document.getElementById('wallet-refer');
+
+        // History Page
+        const historyListElem = document.getElementById('history-list');
+
+        // ===================================
+        // FIREBASE INITIALIZATION AND AUTH
+        // ===================================
+        const initFirebase = async () => {
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                
+                // Auth State Listener and initial sign-in
+                await new Promise((resolve) => {
+                    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+                        unsubscribe(); 
+                        if (initialAuthToken) {
+                            await signInWithCustomToken(auth, initialAuthToken);
+                        } else if (!user) {
+                            await signInAnonymously(auth);
+                        }
+                        isAuthReady = true;
+                        resolve();
+                    });
+                });
+
+                if (auth.currentUser) {
+                    await loadAndAuthenticateUser(auth.currentUser.uid);
+                } else {
+                     tg.showAlert("লগইন ব্যর্থ হয়েছে।");
+                }
+            } catch (e) {
+                console.error("Firebase Initialization Error:", e);
+                 const container = document.querySelector('.container');
+                 if(container) {
+                     container.innerHTML = `<div class="p-4 mt-4 text-center" style="background-color: #4b1b1b; color: var(--danger-color); border-radius: 10px;">
+                                             <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
+                                             <p class="font-bold">অ্যাপ শুরু করা যায়নি।</p>
+                                             <p style="font-size: 0.8rem;">ত্রুটি: নেটওয়ার্ক বা কনফিগারেশন সমস্যা। পরে চেষ্টা করুন।</p>
+                                          </div>`;
+                    document.querySelector('.bottom-nav').classList.add('hidden');
+                 }
+            }
+        };
+
+        // ===================================
+        // USER AUTH AND DATA LOGIC
+        // ===================================
+        const createInitialProfile = async (userId, userDetails) => {
+            const userDocRef = doc(db, 'artifacts', appId, 'users', userId, 'user_data', 'profile');
+            const initialData = {
+                uid: userId,
+                telegramId: userDetails.id.toString(),
+                firstName: userDetails.first_name || 'User',
+                photoUrl: userDetails.photo_url || '',
+                points: 0.00,
+                dailyAds: 0,
+                referrals: 0,
+                referralBalance: 0.00, 
+                lastAdTime: new Date(0),
+                createdAt: new Date()
+            };
+            await setDoc(userDocRef, initialData, { merge: true });
+            userState = initialData; 
+        };
+
+        const checkAndProcessReferral = async (currentUserId) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const refId = urlParams.get('start'); 
+
+            if (!refId || refId === currentUserId) return; 
+
+            const userDocRef = doc(db, 'artifacts', appId, 'users', currentUserId, 'user_data', 'profile');
+            const userDocSnap = await getDoc(userDocRef);
+
+            if (userDocSnap.exists() && !userDocSnap.data().referredBy) {
+                
+                // 1. Update new user with referrer's ID
+                await updateDoc(userDocRef, {
+                    referredBy: refId,
+                    referredAt: new Date()
+                });
+
+                // 2. Update referrer's data
+                const referrerDocRef = doc(db, 'artifacts', appId, 'users', refId, 'user_data', 'profile');
+                const referrerDocSnap = await getDoc(referrerDocRef);
+
+                if (referrerDocSnap.exists()) {
+                    await updateDoc(referrerDocRef, {
+                        referrals: (referrerDocSnap.data().referrals || 0) + 1,
+                        referralBalance: (referrerDocSnap.data().referralBalance || 0) + REFERRAL_BONUS_TK,
+                    });
+                } else {
+                    console.warn(`Referrer profile not found for ID: ${refId}`);
+                }
+            }
+        };
+
+
+        const loadAndAuthenticateUser = async (userId) => {
+            const userDetails = tg?.initDataUnsafe?.user || { id: userId, first_name: 'Guest' };
+            const userDocRef = doc(db, 'artifacts', appId, 'users', userId, 'user_data', 'profile');
+
+            const docSnap = await getDoc(userDocRef);
+
+            if (!docSnap.exists()) {
+                await createInitialProfile(userId, userDetails);
+            } else {
+                userState = docSnap.data();
+            }
+
+            // After initial load/create, set up real-time listener
+            onSnapshot(userDocRef, (doc) => {
+                if (doc.exists()) {
+                    userState = doc.data();
+                    updateUI(); 
+                }
+            }, (error) => {
+                console.error("Firestore Snapshot Error:", error);
+                tg.showAlert("ইউজার ডেটা লোড করতে সমস্যা হয়েছে।");
+            });
+            
+            await checkAndProcessReferral(userId);
+
+            // Load history
+            loadWithdrawalHistory(userId);
+            
+            updateUI(); 
+        };
+        
+        const updateUI = () => {
+            const user = tg?.initDataUnsafe?.user || { first_name: 'User', id: auth.currentUser?.uid, photo_url: 'https://placehold.co/60x60/3498db/ffffff?text=U' };
+            const userId = auth.currentUser?.uid || 'N/A';
+            const { points, dailyAds, referrals, referralBalance } = userState;
+            const totalWithdrawable = points + referralBalance;
+
+
+            // === Profile & Home UI ===
+            userPhotoElem.src = user.photo_url || 'https://placehold.co/60x60/3498db/ffffff?text=U';
+            userNameElem.textContent = user.first_name || 'ব্যবহারকারী';
+            userIdElem.textContent = userId;
+            
+            // Balance Display
+            mainBalanceElem.textContent = `${points.toFixed(2)} TK`;
+            referBalanceElem.textContent = `${referralBalance.toFixed(2)} TK`;
+            totalReferralsElem.textContent = referrals;
+            dailyAdsWatchedElem.textContent = dailyAds;
+            taskAdCountElem.textContent = dailyAds;
+            
+            // Referral Link 
+            const baseUrl = window.location.origin + window.location.pathname;
+            const referralLink = `${baseUrl}?start=${userId}`;
+            referralLinkElem.value = referralLink;
+            
+            // === Withdraw UI ===
+            totalWithdrawableBalanceElem.textContent = `${totalWithdrawable.toFixed(2)} TK`;
+            mainBalanceWithdrawElem.textContent = `${points.toFixed(2)} TK`;
+            referBalanceWithdrawElem.textContent = `${referralBalance.toFixed(2)} TK`;
+            
+            const remainingReferrals = MIN_REFERRALS_FOR_WITHDRAW - referrals;
+            const isReferralConditionMet = remainingReferrals <= 0;
+            const isBalanceSufficient = totalWithdrawable >= 100;
+
+            // Update Radio/Select for Withdraw
+            const selectedWallet = walletSelect.value;
+            const currentWalletBalance = selectedWallet === 'main' ? points : referralBalance;
+            const isWalletBalanceSufficient = currentWalletBalance >= 100;
+            
+            // Referral Check Block Visibility
+            if (isReferralConditionMet) {
+                referralCheckBlock.style.borderLeftColor = '#2ecc71'; /* Green */
+                referralCheckText.innerHTML = `✅ উইথড্রয়ালের শর্ত পূরণ হয়েছে। এখন আপনি উত্তোলন করতে পারবেন।`;
+            } else {
+                referralCheckBlock.style.borderLeftColor = 'var(--danger-color)'; /* Red */
+                referralCheckText.innerHTML = `উইথড্র করার জন্য আরও <span style="color: var(--danger-color); font-weight: bold;">${remainingReferrals} জন</span> রেফার সম্পন্ন করতে হবে।`;
+            }
+
+            // Withdraw button state: Must meet both referral and minimum balance conditions (100 TK in selected wallet)
+            if (isReferralConditionMet && isWalletBalanceSufficient) {
+                withdrawSubmitBtn.disabled = false;
+                refStatusNotice.classList.add('hidden');
+            } else {
+                withdrawSubmitBtn.disabled = true;
+                if (!isReferralConditionMet) {
+                   refStatusNotice.classList.remove('hidden');
+                } else if (!isBalanceSufficient) {
+                   refStatusNotice.classList.remove('hidden');
+                   refStatusNotice.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i> উত্তোলনের জন্য সর্বনিম্ন 100 TK থাকতে হবে।`;
+                }
+            }
+
+        };
+
+        // ===================================
+        // GEMINI API FUNCTION
+        // ===================================
+
+        const handleGenerateReferralMessage = async () => {
+            if (!isAuthReady || !auth.currentUser) return;
+
+            geminiModal.classList.remove('hidden');
+            generatedMessageArea.value = "মেসেজ তৈরি করা হচ্ছে... অনুগ্রহ করে অপেক্ষা করুন।";
+            generateMessageBtn.disabled = true;
+
+            const systemPrompt = `Act as an enthusiastic and persuasive marketing assistant for a Telegram Mini App named 'Earning ~×•RDS TEAM•×~'. Your goal is to generate a short (max 3 lines), viral, promotional message in BENGALI (Bangla) that encourages users to click the referral link to start earning. The key benefits are: 1) Easy Earning (Watching Ads), 2) Get a 30 TK bonus per referral. The message MUST include a placeholder for the user's referral link: [YOUR_REFERRAL_LINK_HERE].`;
+            
+            const userQuery = `Create a viral Bengali marketing message about easy earning (watching ads) and the 30 TK referral bonus.`;
+            
+            const referralLink = referralLinkElem.value;
+            
+            try {
+                let response;
+                for (let i = 0; i < 3; i++) {
+                    const apiKey = API_KEY;
+                    const apiUrl = `${GEMINI_API_URL}${apiKey}`;
+                    
+                    const payload = {
+                        contents: [{ parts: [{ text: userQuery }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] },
+                        generationConfig: {
+                            temperature: 0.8,
+                            maxOutputTokens: 200,
+                        }
+                    };
+
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) break;
+
+                    const delay = Math.pow(2, i) * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+
+                if (!response || !response.ok) {
+                    throw new Error("API call failed after retries.");
+                }
+
+                const result = await response.json();
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "মেসেজ তৈরি করা যায়নি।";
+                
+                const finalMessage = text.replace("[YOUR_REFERRAL_LINK_HERE]", referralLink);
+                generatedMessageArea.value = finalMessage;
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                generatedMessageArea.value = "দুঃখিত! মেসেজ তৈরি করতে সমস্যা হয়েছে। পরে চেষ্টা করুন।";
+            } finally {
+                generateMessageBtn.disabled = false;
+            }
+        };
+
+
+        // ===================================
+        // TRANSACTION AND HISTORY FUNCTIONS
+        // ===================================
+
+        const handleWatchAd = async () => {
+            if (!isAuthReady || !auth.currentUser) {
+                tg.showAlert("অনুগ্রহ করে লগইন হওয়া পর্যন্ত অপেক্ষা করুন।");
+                return;
+            }
+            
+            watchAdBtn.disabled = true;
+            watchAdBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> বিজ্ঞাপন দেখা হচ্ছে...';
+            
+            // Simulate ad watching delay
+            await new Promise(resolve => setTimeout(resolve, 3000)); 
+
+            const userId = auth.currentUser.uid;
+            const userDocRef = doc(db, 'artifacts', appId, 'users', userId, 'user_data', 'profile');
+            
+            const AD_POINT = 0.50; 
+            
+            try {
+                await updateDoc(userDocRef, {
+                    points: (userState.points || 0) + AD_POINT,
+                    dailyAds: (userState.dailyAds || 0) + 1,
+                    lastAdTime: new Date()
+                });
+                
+                tg.HapticFeedback.notificationOccurred('success');
+                tg.showAlert(`অভিনন্দন! আপনি ${AD_POINT.toFixed(2)} TK উপার্জন করেছেন।`);
+
+            } catch (e) {
+                console.error("Error updating ad points:", e);
+                tg.showAlert("পয়েন্ট যোগ করার সময় ত্রুটি হয়েছে।");
+            } finally {
+                watchAdBtn.innerHTML = '<i class="fas fa-video mr-2"></i> বিজ্ঞাপন দেখুন (Watch Ad)';
+                watchAdBtn.disabled = false;
+            }
+        };
+
+
+        const handleSubmitWithdraw = async (event) => {
+            event.preventDefault();
+            if (!isAuthReady || !auth.currentUser) return;
+
+            const amount = parseFloat(amountInput.value);
+            const method = document.getElementById('method-select').value;
+            const number = document.getElementById('number-input').value.trim();
+            const wallet = walletSelect.value; 
+
+            const currentBalance = wallet === 'main' ? (userState.points || 0) : (userState.referralBalance || 0);
+            const deductionField = wallet === 'main' ? 'points' : 'referralBalance';
+
+            if (amount <= 0 || isNaN(amount) || number === "" || amount < 100) {
+                tg.showAlert("উত্তোলনের পরিমাণ কমপক্ষে 100 TK হতে হবে এবং নাম্বার সঠিক হতে হবে।");
+                return;
+            }
+            if (amount > currentBalance) {
+                tg.showAlert(`আপনার ${wallet === 'main' ? 'মেইন' : 'রেফার'} ব্যালেন্সে পর্যাপ্ত টাকা নেই।`);
+                return;
+            }
+            if (userState.referrals < MIN_REFERRALS_FOR_WITHDRAW) {
+                tg.showAlert(`উত্তোলনের জন্য কমপক্ষে ${MIN_REFERRALS_FOR_WITHDRAW} জন রেফার প্রয়োজন।`);
+                return;
+            }
+
+            withdrawSubmitBtn.disabled = true;
+            withdrawSubmitBtn.classList.add('loading');
+            withdrawSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> অনুরোধ পাঠানো হচ্ছে...';
+            
+            // Deduct balance immediately
+            const oldBalance = currentBalance;
+            const newBalance = oldBalance - amount;
+            
+            const userId = auth.currentUser.uid;
+            const userDocRef = doc(db, 'artifacts', appId, 'users', userId, 'user_data', 'profile');
+
+            try {
+                // Perform local deduction before submitting the request to database
+                let updateObject = {};
+                updateObject[deductionField] = newBalance;
+                await updateDoc(userDocRef, updateObject);
+
+                // Add withdrawal request to a common 'public' collection for admins to see
+                const historyColRef = collection(db, 'artifacts', appId, 'public', 'data', 'withdrawals');
+                await addDoc(historyColRef, {
+                    userId: userId,
+                    userName: userState.firstName || 'User',
+                    amount: amount,
+                    method: method,
+                    number: number,
+                    wallet: wallet,
+                    status: 'Pending', // Pending, Approved, Rejected
+                    requestedAt: new Date()
+                });
+                
+                tg.HapticFeedback.notificationOccurred('success');
+                tg.showAlert("উত্তোলনের অনুরোধ সফলভাবে পাঠানো হয়েছে। ২৪-৪৮ ঘণ্টার মধ্যে পেমেন্ট পেয়ে যাবেন।");
+
+            } catch (e) {
+                console.error("Withdrawal submission error:", e);
+                tg.showAlert("অনুরোধ জমা দিতে ব্যর্থ। আপনার ব্যালেন্স ফেরত দেওয়া হয়েছে।");
+                
+                // Rollback deduction if submission fails
+                try {
+                    let rollbackObject = {};
+                    rollbackObject[deductionField] = oldBalance;
+                    await updateDoc(userDocRef, rollbackObject);
+                } catch (rollbackError) {
+                    console.error("Balance Rollback failed:", rollbackError);
+                    tg.showAlert("গুরুত্বপূর্ণ ত্রুটি! ব্যালেন্স রোলব্যাক করা যায়নি। অ্যাডমিনকে জানান।");
+                }
+            } finally {
+                withdrawSubmitBtn.classList.remove('loading');
+                withdrawSubmitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> উত্তোলনের অনুরোধ পাঠান';
+                withdrawSubmitBtn.disabled = false;
+            }
+        };
+        
+        const loadWithdrawalHistory = (userId) => {
+            const historyColRef = collection(db, 'artifacts', appId, 'public', 'data', 'withdrawals');
+            const q = query(historyColRef, where("userId", "==", userId));
+
+            // Set up real-time listener for history
+            onSnapshot(q, (snapshot) => {
+                let historyHtml = '';
+                
+                if (snapshot.empty) {
+                    historyHtml = `
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-box-open fa-2x" style="color: var(--subtle-text);"></i>
+                            <p class="mt-2" style="color: var(--subtle-text);">আপনার কোনো উত্তোলনের ইতিহাস পাওয়া যায়নি।</p>
+                        </div>
+                    `;
+                } else {
+                    // Sort by requestedAt descending (newest first) in memory
+                    const history = [];
+                    snapshot.forEach(doc => {
+                        history.push(doc.data());
+                    });
+
+                    history.sort((a, b) => {
+                        const dateA = a.requestedAt.toDate ? a.requestedAt.toDate() : a.requestedAt;
+                        const dateB = b.requestedAt.toDate ? b.requestedAt.toDate() : b.requestedAt;
+                        return dateB - dateA;
+                    });
+
+                    history.forEach(item => {
+                        const date = item.requestedAt.toDate ? item.requestedAt.toDate().toLocaleDateString('bn-BD') : 'N/A';
+                        const time = item.requestedAt.toDate ? item.requestedAt.toDate().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }) : '';
+                        
+                        let statusColor, statusIcon;
+                        switch (item.status) {
+                            case 'Approved':
+                                statusColor = '#2ecc71'; // Green
+                                statusIcon = 'check-circle';
+                                break;
+                            case 'Rejected':
+                                statusColor = '#e74c3c'; // Red
+                                statusIcon = 'times-circle';
+                                break;
+                            default:
+                                statusColor = '#f1c40f'; // Yellow
+                                statusIcon = 'clock';
+                                break;
+                        }
+
+                        historyHtml += `
+                            <div class="card mt-3 p-3" style="border-left: 4px solid ${statusColor};">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <p class="font-bold" style="margin: 0; font-size: 1rem;">${item.amount.toFixed(2)} TK</p>
+                                        <p style="margin: 0; font-size: 0.8rem; color: var(--subtle-text);">(${item.wallet === 'main' ? 'মেইন' : 'রেফার'} ব্যালেন্স)</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold" style="color: ${statusColor}; margin: 0; font-size: 0.9rem;">
+                                            <i class="fas fa-${statusIcon} mr-1"></i> ${item.status === 'Pending' ? 'বিবেচনাধীন' : item.status === 'Approved' ? 'অনুমোদিত' : 'বাতিল'}
+                                        </p>
+                                        <p style="margin: 0; font-size: 0.75rem; color: var(--subtle-text);">${date} ${time}</p>
+                                    </div>
+                                </div>
+                                <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: var(--text-color);">মাধ্যম: <span class="font-bold">${item.method.toUpperCase()}</span> | নাম্বার: <span class="font-bold">${item.number}</span></p>
+                            </div>
+                        `;
+                    });
+                }
+
+                historyListElem.innerHTML = historyHtml;
+            }, (error) => {
+                console.error("Error loading history:", error);
+                historyListElem.innerHTML = `
+                    <div class="card p-4 text-center" style="background-color: #4b1b1b; color: var(--danger-color);">
+                        <i class="fas fa-exclamation-circle mr-2"></i> ইতিহাস লোড করতে সমস্যা হয়েছে।
+                    </div>
+                `;
+            });
+        };
+        
+        // ===================================
+        // UI & UTILITY FUNCTIONS
+        // ===================================
+        const copyReferralLink = () => {
+            // Using document.execCommand('copy') for better compatibility in iframe/canvas environment
+            const input = document.createElement('input');
+            input.value = referralLinkElem.value;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            
+            tg.HapticFeedback.notificationOccurred('success');
+            tg.showAlert("রেফারেল লিংক কপি করা হয়েছে!");
+        };
+        
+        const copyGeneratedMessage = () => {
+             // Using document.execCommand('copy') for better compatibility in iframe/canvas environment
+            const input = document.createElement('input');
+            input.value = generatedMessageArea.value;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            
+            tg.HapticFeedback.notificationOccurred('success');
+            tg.showAlert("মেসেজটি কপি করা হয়েছে!");
+            geminiModal.classList.add('hidden');
+        };
+
+        const setupNavigation = () => {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const pages = document.querySelectorAll('.page');
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pageId = button.dataset.page;
+                    pages.forEach(page => page.classList.remove('active'));
+                    document.getElementById(pageId).classList.add('active');
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+            
+            // Wallet radio selection handler
+            walletMainRadio.addEventListener('change', updateUI);
+            walletReferRadio.addEventListener('change', updateUI);
+        };
+        
+        const initApp = () => {
+            if (tg) {
+                tg.ready();
+                tg.expand();
+                tg.setHeaderColor('#1e1e1e');
+                tg.setBackgroundColor('#121212');
+            }
+            
+            // App Event Listeners
+            watchAdBtn.addEventListener('click', handleWatchAd);
+            withdrawForm.addEventListener('submit', handleSubmitWithdraw);
+            copyReferralBtn.addEventListener('click', copyReferralLink);
+            
+            // Gemini Feature Listeners 
+            generateMessageBtn.addEventListener('click', handleGenerateReferralMessage);
+            closeModalBtn.addEventListener('click', () => geminiModal.classList.add('hidden'));
+            copyGeneratedBtn.addEventListener('click', copyGeneratedMessage);
+            
+            setupNavigation();
+            initFirebase();
+            
+            updateUI(); 
+        };
+
+        window.onload = initApp;
+
+    </script>
+</body>
+
+</html>
